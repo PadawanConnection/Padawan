@@ -1,1 +1,1 @@
-var rtc = require("rtc.js");
+module.exports = require('rtc.js'); //easy rtc connection added
