@@ -1,0 +1,28 @@
+{
+  "name": "PadawanConnection",
+  "version": "1.0.0",
+  "description": "Meeting place for career changers (into tech) can find and learn from mentors by way of video",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PadawanConnection/Padawan.git"
+  },
+  "keywords": [
+    "mentor",
+    "mentee",
+    "MEAN"
+  ],
+  "author": "Brian Lee, Jaron Parnala, Will Simmons, Vani Mehta, James Bradley, Nick Marazzo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PadawanConnection/Padawan/issues"
+  },
+  "homepage": "https://github.com/PadawanConnection/Padawan",
+  "dependencies": {
+    "express": "^4.13.1",
+    "morgan": "^1.6.1"
+  }
+}
