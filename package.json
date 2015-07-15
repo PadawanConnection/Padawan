@@ -1,9 +1,8 @@
 {
-  "name": "MentorLeap",
-  "version": "1.0",
-  "author": "Brian Lee,Jaron Parnala, Will Simmons, Vani Mehta, James Bradley, Nick Marazzo"
-  "description": "Mentor Matchmaking and Connecting, AngularJS,MongoDB,EasyRTC, Express, and Socket.io",
-  "main":"server.js",
+  "name": "PadawanConnection",
+  "version": "1.0.0",
+  "description": "Meeting place for career changers (into tech) can find and learn from mentors by way of video",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,18 +15,16 @@
     "mentee",
     "MEAN"
   ],
-  "dependencies": {
-    "easyrtc": "1.0.x",
-    "express": "*",
-    "morgan": "^1.6.1",
-    "socket.io": "0.9.x"
-  },
+  "author": "Brian Lee, Jaron Parnala, Will Simmons, Vani Mehta, James Bradley, Nick Marazzo",
   "license": "ISC",
-  
+  "bugs": {
+    "url": "https://github.com/PadawanConnection/Padawan/issues"
   },
-    "keywords": [
-    "mentor",
-    "mentee",
-    "MEAN"
-  ],
+  "homepage": "https://github.com/PadawanConnection/Padawan",
+  "dependencies": {
+    "express": "^4.13.1",
+    "morgan": "^1.6.1",
+    "socket.io": "0.9.x",
+    "easyrtc": "1.0.x"
+  }
 }
