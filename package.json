@@ -1,28 +1,24 @@
 {
-  "name": "PadawanConnection",
-  "version": "1.0.0",
-  "description": "Meeting place for career changers (into tech) can find and learn from mentors by way of video",
-  "main": "server.js",
+  "name"        : "easyrtc_server_example",
+  "version"     : "0.1.6",
+  "author"      : "Priologic Software Inc. <info@priologic.com> (http://priologic.com/)",
+  "description" : "Simple EasyRTC server example which includes EasyRTC, Express, and Socket.io",
+
+  "private"     : true,
+
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start"     : "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/PadawanConnection/Padawan.git"
+
+  "dependencies" : {
+    "easyrtc"   : "1.0.x",
+    "express"   : "*",
+    "socket.io" : "0.9.x"
   },
-  "keywords": [
-    "mentor",
-    "mentee",
-    "MEAN"
-  ],
-  "author": "Brian Lee, Jaron Parnala, Will Simmons, Vani Mehta, James Bradley, Nick Marazzo",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/PadawanConnection/Padawan/issues"
-  },
-  "homepage": "https://github.com/PadawanConnection/Padawan",
-  "dependencies": {
-    "express": "^4.13.1",
-    "morgan": "^1.6.1"
+
+  "license"     : "BSD2",
+
+  "engines": {
+    "node"      : ">=0.8"
   }
 }
