@@ -3,18 +3,31 @@
   "version": "1.0",
   "author": "Brian Lee,Jaron Parnala, Will Simmons, Vani Mehta, James Bradley, Nick Marazzo"
   "description": "Mentor Matchmaking and Connecting, AngularJS,MongoDB,EasyRTC, Express, and Socket.io",
-  "private": true,
+  "main":"server.js",
   "scripts": {
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PadawanConnection/Padawan.git"
+  },
+  "keywords": [
+    "mentor",
+    "mentee",
+    "MEAN"
+  ],
   "dependencies": {
     "easyrtc": "1.0.x",
     "express": "*",
     "morgan": "^1.6.1",
     "socket.io": "0.9.x"
   },
-  "license": "",
-  "engines": {
-    "node": ">=0.8"
-  }
+  "license": "ISC",
+  
+  },
+    "keywords": [
+    "mentor",
+    "mentee",
+    "MEAN"
+  ],
 }
