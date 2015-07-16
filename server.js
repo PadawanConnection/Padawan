@@ -1,16 +1,20 @@
-var express = require('express');
-var morgan = require('morgan');
-var app = express();
+// Load required modules
+var http    = require("http");              // http server core module
+var express = require("express");           // web framework external module
+var io      = require("socket.io");         // web socket external module
+var easyrtc = require("easyrtc");           // EasyRTC external module
+var morgan  = require("morgan");
+// Setup and configure Express http server. Expect a subfolder called "static" to be the web root.
+var httpApp = express();
+httpApp.use(express.static(__dirname + "/public/"));
+httpApp.use(morgan('dev'));
 
-app.use(morgan('dev'));
+// Start Express http server on port 3000
+var webServer = http.createServer(httpApp).listen(3000);
 
-app.get('/', function (req, res) {
-  res.send('Hello World!');
-});
+// Start Socket.io so it attaches itself to Express server
+var socketServer = io.listen(webServer, {"log level":1});
 
-var server = app.listen(3000, function () {
-  var host = server.address().address;
-  var port = server.address().port;
+// Start EasyRTC server
+var rtc = easyrtc.listen(httpApp, socketServer);
 
-  console.log('Example app listening at http://%s:%s', host, port);
-});

@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="/node_modules/easyrtc/easyrtc.css" />
+  <script src="/js/socket.io.js"></script>
+  <script src="/js/easyrtc.js"></script>
+  <script src="/js/main.js"></script>
+</head>
+<body onload="initializer()">
+  <div id="otherClients"> </div>
+  <video  style="float:left" id="self" width="300" height="200"></video>
+  <div style="position:relative;float:left;width:300px">
+    <video id="caller" width="300" height="200"></video>
+  </div>
+</body>
+</html>
