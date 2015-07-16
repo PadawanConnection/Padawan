@@ -5,8 +5,14 @@ var app = express();
 app.use(morgan('dev'));
 
 app.get('/', function (req, res) {
-  res.send('Hello World!');
+  // res.send('Hello World!');
+  res.sendFile('static/index.html', { root: __dirname });
 });
+
+app.get('/bc', function (req, res) {
+	res.sendFile('static/bc.html', { root: __dirname });
+})
+
 
 var server = app.listen(3000, function () {
   var host = server.address().address;
