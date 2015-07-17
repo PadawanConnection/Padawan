@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/PadawanConnection/Padawan",
   "dependencies": {
+    "cors": "^2.7.1",
     "easyrtc": "1.0.x",
     "express": "^4.13.1",
     "morgan": "^1.6.1",
