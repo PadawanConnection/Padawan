@@ -1,4 +1,4 @@
-  var socket = io();
+$(function() {
   var FADE_TIME = 150; // ms
   var TYPING_TIMER_LENGTH = 400; // ms
   var COLORS = [
@@ -6,12 +6,13 @@
     '#58dc00', '#287b00', '#a8f07a', '#4ae8c4',
     '#3b88eb', '#3824aa', '#a700ff', '#d300e7'
   ];
- 
-  // Initialize variables
+
+  // Initialize varibles
   var $window = $(window);
   var $usernameInput = $('.usernameInput'); // Input for username
   var $messages = $('.messages'); // Messages area
   var $inputMessage = $('.inputMessage'); // Input message input box
+
   var $loginPage = $('.login.page'); // The login page
   var $chatPage = $('.chat.page'); // The chatroom page
 
@@ -21,6 +22,8 @@
   var typing = false;
   var lastTypingTime;
   var $currentInput = $usernameInput.focus();
+
+  var socket = io.connect();
 
   function addParticipantsMessage (data) {
     var message = '';
@@ -260,3 +263,4 @@
   socket.on('stop typing', function (data) {
     removeChatTyping(data);
   });
+});

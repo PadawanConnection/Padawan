@@ -1,24 +1,29 @@
-//environment setup
-var express = require('express');
-var    app  = express();
-var    http = require('http').createServer(app);
-var    io   = require('socket.io').listen(http);
-var morgan  = require('morgan');
-var easyrtc = require('easyrtc');
-
-//dev midddleware -remove on deploy
-app.use(morgan('dev'));
-
-//express setup
-app.use(express.static(__dirname + "./public/"));
+/// Load required modules
+var http    = require("http");              // http server core module
+var express = require("express");           // web framework external module
+var io      = require("socket.io");         // web socket external module
+var easyrtc = require("easyrtc");           // EasyRTC external module
+var morgan  = require("morgan");
+// Setup and configure Express http server. Expect a subfolder called "static" to be the web root.
+var httpApp = express();
+httpApp.use(express.static(__dirname + "/public/"));
+httpApp.use(morgan('tiny'));
 
 // Start Express http server on port 3000
-http.listen(3000);
+var webServer = http.createServer(httpApp).listen(3000);
 
-// Socket.io Communication Reception 
-io.sockets.on('connection', function (socket) {
-  console.log(socket);
+// Start Socket.io so it attaches itself to Express server
+var socketServer = io.listen(webServer);
+
+socketServer.sockets.on('connection', function(client){
+  console.log(client);
+});
+
+io.on('connection', function(socket){
+  socket.on('chat message', function(msg){
+    io.emit('chat message', msg);
+  });
 });
 
 // Start EasyRTC server
-var rtc = easyrtc.listen(app, io);
+var rtc = easyrtc.listen(httpApp, socketServer);
