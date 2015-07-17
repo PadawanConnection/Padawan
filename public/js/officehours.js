@@ -12,10 +12,10 @@ easyrtc.setStreamAcceptor( function(callerEasyrtcid, stream) {
         easyrtc.setRoomOccupantListener( roomListener);
         var connectSuccess = function(myId) {
             console.log("My easyrtcid is " + myId);
-        }
+        };
         var connectFailure = function(errorCode, errText) {
             console.log(errText);
-        }
+        };
         easyrtc.initMediaSource(
               function(){        // success callback
                   var selfVideo = document.getElementById("self");
