@@ -4,6 +4,7 @@ var express = require("express");           // web framework external module
 var io      = require("socket.io");         // web socket external module
 var easyrtc = require("easyrtc");           // EasyRTC external module
 var morgan  = require("morgan");
+var path = require('path');
 // Setup and configure Express http server. Expect a subfolder called "static" to be the web root.
 var httpApp = express();
 httpApp.use(express.static(__dirname + "/public/"));
@@ -18,3 +19,6 @@ var socketServer = io.listen(webServer, {"log level":1});
 // Start EasyRTC server
 var rtc = easyrtc.listen(httpApp, socketServer);
 
+httpApp.get('/room', function(req, res) {
+    res.sendFile(path.join(__dirname + '/public/room.html'));
+});
